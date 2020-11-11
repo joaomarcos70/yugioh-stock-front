@@ -1,16 +1,25 @@
 <template>
-  <div>
-      <router-view ref="router">
+  <v-app id="inspire">
+    <v-navigation-drawer v-model="drawer" app> </v-navigation-drawer>
 
-      </router-view>
-  </div>
+    <v-app-bar app>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <v-toolbar-title>Yugioh Stock</v-toolbar-title>
+    </v-app-bar>
+
+    <v-main>
+      <router-view ref="router"> </router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
 export default {
-
+  data: () => ({ drawer: false })
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+
 </style>
