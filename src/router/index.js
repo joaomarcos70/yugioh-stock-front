@@ -1,15 +1,37 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Teste from "../views/Teste.vue";
+
+import Login from "../views/Login.vue";
+import Wants from "../views/Wants.vue";
+import Collection from "../views/Collection.vue";
+import Profile from "../views/Profile.vue";
 import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/teste",
-    name: "teste",
-    component: Teste
+    path: "/",
+    name: "Login",
+    component: Login
+  },
+
+  {
+    path: "/profile",
+    name: "Profile",
+    component: Profile
+  },
+
+  {
+    path: "/wants",
+    name: "Wants",
+    component: Wants
+  },
+
+  {
+    path: "/collection",
+    name: "Collection",
+    component: Collection
   },
 
   {
