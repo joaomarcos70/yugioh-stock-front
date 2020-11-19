@@ -2,7 +2,7 @@
   <v-item-group>
     <v-container fluid>
       <v-row>
-        <v-col v-for="card in listaCard" :key="card" cols="12" md="2">
+        <v-col v-for="(card, index) in listaCard" :key="index" cols="12" md="2">
           <v-item>
             <v-card>
               <v-img position="top" height="218" :src="card.img"> </v-img>
