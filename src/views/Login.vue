@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-login">
     <v-container class="ma-6">
       <v-row style="height: 350px">
         <v-col> </v-col>
@@ -47,7 +47,8 @@
 
       <v-row style="height: 300px">
         <v-col cols="8">
-          <v-card class="pa-2" outlined tile>
+          <v-card class="pa-2" outlined tile color="rgb(0, 0, 0, 0)">
+            
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
@@ -108,4 +109,9 @@ export default {
 };
 </script>
 <style>
+.bg-login{
+background-image: url('../assets/bg/fundohome2.png');
+background-size:100%;
+height: 100%;
+}
 </style>

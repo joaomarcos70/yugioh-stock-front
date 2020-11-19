@@ -1,7 +1,6 @@
 <template>
-  <v-container>
+  <v-container class="bg-home">
     <v-row style="height: 80vh">
-      
       <v-col align-self="center" align="center">
         <v-img
           height="300"
@@ -13,7 +12,7 @@
         ></v-img>
       </v-col>
 
-      <v-col  align-self="center" align="center">
+      <v-col align-self="center" align="center">
         <v-img
           height="300"
           width="300"
@@ -23,7 +22,6 @@
           src="../assets/fluffaldog.png"
         ></v-img>
       </v-col>
-
     </v-row>
   </v-container>
 </template>
@@ -38,4 +36,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.bg-home {
+  background-image: url("../assets/bg/fundohome2.png");
+  background-size:contain;
+}
+</style>

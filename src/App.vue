@@ -1,6 +1,16 @@
 <template>
   <v-app id="inspire">
     <v-app-bar app>
+      <v-img
+        class="mx-5"
+        style="cursor: pointer"
+        @click="routerPush('home')"
+        src="../src/assets/logo/logo.png"
+        max-height="140"
+        max-width="140"
+        contain
+      ></v-img>
+
       <v-toolbar-title>Yugioh Stock</v-toolbar-title>
     </v-app-bar>
 
@@ -19,6 +29,13 @@
 </template>
 
 <script>
+export default {
+  methods: {
+    routerPush(rota) {
+      this.$router.push({ path: rota });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

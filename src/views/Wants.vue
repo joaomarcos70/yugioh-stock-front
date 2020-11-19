@@ -1,7 +1,7 @@
 <template>
   <v-item-group>
     <v-container fluid>
-      <v-row >
+      <v-row>
         <v-col v-for="card in listaCard" :key="card" cols="12" md="2">
           <v-item>
             <v-card>
@@ -24,12 +24,32 @@
           </v-item>
         </v-col>
       </v-row>
+
+      <v-btn
+        style="z-index: 999"
+        color="red"
+        dark
+        fixed
+        top
+        right
+        fab
+        @click="esconderMenu = !esconderMenu"
+      >
+        <v-icon>mdi-filter</v-icon>
+      </v-btn>
+
+      <menu-filter v-if="esconderMenu" />
     </v-container>
   </v-item-group>
 </template>
 
 <script>
+import MenuFilter from "../components/MenuFilter.vue";
+
 export default {
+  components: {
+    MenuFilter,
+  },
   data() {
     return {
       listaCard: [
@@ -51,25 +71,62 @@ export default {
           quantidade: 3,
           idioma: "en",
         },
-          {
+        {
           img: "https://ygoprodeck.com/pics/13241004.jpg",
           raridade: "super",
           quantidade: 3,
           idioma: "en",
         },
-          {
+        {
           img: "https://ygoprodeck.com/pics/13241004.jpg",
           raridade: "super",
           quantidade: 3,
           idioma: "en",
         },
-          {
+        {
+          img: "https://ygoprodeck.com/pics/13241004.jpg",
+          raridade: "super",
+          quantidade: 3,
+          idioma: "en",
+        },
+        {
+          img: "https://ygoprodeck.com/pics/13241004.jpg",
+          raridade: "super",
+          quantidade: 3,
+          idioma: "en",
+        },
+        {
+          img: "https://ygoprodeck.com/pics/13241004.jpg",
+          raridade: "super",
+          quantidade: 3,
+          idioma: "en",
+        },
+        {
+          img: "https://ygoprodeck.com/pics/13241004.jpg",
+          raridade: "super",
+          quantidade: 3,
+          idioma: "en",
+        },
+        {
+          img: "https://ygoprodeck.com/pics/13241004.jpg",
+          raridade: "super",
+          quantidade: 3,
+          idioma: "en",
+        },
+        {
+          img: "https://ygoprodeck.com/pics/13241004.jpg",
+          raridade: "super",
+          quantidade: 3,
+          idioma: "en",
+        },
+        {
           img: "https://ygoprodeck.com/pics/13241004.jpg",
           raridade: "super",
           quantidade: 3,
           idioma: "en",
         },
       ],
+      esconderMenu: false,
     };
   },
 };
