@@ -38,7 +38,7 @@
         <v-icon>mdi-filter</v-icon>
       </v-btn>
 
-      <menu-filter v-if="esconderMenu" />
+      <menu-filter v-model="esconderMenu" v-if="esconderMenu"/>
     </v-container>
   </v-item-group>
 </template>
@@ -132,5 +132,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
