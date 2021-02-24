@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import MenuFilter from "../components/MenuFilter.vue";
+import MenuFilter from "../components/MenuFilter/MenuFilter.vue";
 
 export default {
   components: {

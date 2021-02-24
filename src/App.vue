@@ -7,7 +7,7 @@
         @click="routerPush('home')"
         src="../src/assets/logo/logo.png"
         max-height="140"
-        max-width="140"
+        max-width="56"
         contain
       ></v-img>
 
@@ -21,7 +21,7 @@
     <v-footer dark padless>
       <v-card class="flex" flat tile>
         <v-card-text class="py-2 white--text text-center">
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+          {{ new Date().getFullYear() }} — <strong>Yugioh Stock</strong>
         </v-card-text>
       </v-card>
     </v-footer>
@@ -29,6 +29,7 @@
 </template>
 
 <script>
+
 export default {
   methods: {
     routerPush(rota) {

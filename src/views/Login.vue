@@ -2,9 +2,18 @@
   <div class="bg-login">
     <v-container class="ma-6">
       <v-row style="height: 350px">
-        <v-col> </v-col>
-        <v-col> </v-col>
-        <v-col>
+        <v-col></v-col>
+        <v-col cols="5">
+          <v-card
+            class="text-center pa-2"
+            outlined
+            tile
+            color="#FAFAFA"
+          >
+            Yugi
+          </v-card>
+        </v-col>
+        <v-col cols="3">
           <v-card class="pa-2" outlined tile>
             <validation-observer ref="observer" v-slot="{ invalid }">
               <form @submit.prevent="submit">
@@ -43,24 +52,6 @@
             </validation-observer>
           </v-card>
         </v-col>
-      </v-row>
-
-      <v-row style="height: 300px">
-        <v-col cols="8">
-          <v-card class="pa-2" outlined tile color="rgb(0, 0, 0, 0)">
-            
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum
-          </v-card>
-        </v-col>
-        <v-col> </v-col>
       </v-row>
     </v-container>
   </div>
@@ -102,16 +93,16 @@ export default {
   methods: {
     submit() {
       if (this.$refs.observer.validate()) {
-        this.$router.push({path:"home"})
+        this.$router.push({ path: "home" });
       }
     },
   },
 };
 </script>
 <style>
-.bg-login{
-background-image: url('../assets/bg/fundohome2.png');
-background-size:100%;
-height: 100%;
+.bg-login {
+  background-image: url("../assets/bg/fundohome3.jpg");
+  background-size: 100%;
+  height: 100%;
 }
 </style>
