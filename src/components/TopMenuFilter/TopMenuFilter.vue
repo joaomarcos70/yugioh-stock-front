@@ -1,7 +1,6 @@
 <template>
   <v-card class="overflow-hidden">
     <v-app-bar app color="white" prominent>
-      <v-toolbar-title>Lista de Desejos</v-toolbar-title>
       <v-col cols="12">
         <v-row>
           <v-col cols="4">
