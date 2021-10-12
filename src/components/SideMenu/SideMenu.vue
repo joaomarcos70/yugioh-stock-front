@@ -17,19 +17,21 @@
       <v-divider></v-divider>
 
       <v-list dense>
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          @click="menuClick(item)"
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
+        <v-list-item-group v-model="selectedItem" color="primary">
+          <v-list-item
+            v-for="item in items"
+            :key="item.title"
+            @click="menuClick(item)"
+          >
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
 
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
   </div>
@@ -39,16 +41,17 @@
 export default {
   data() {
     return {
+      selectedItem: 1,
       items: [
-        { title: "Home", icon: "mdi-home-city", path:"/home" },
-        { title: "Minhas Cartas", icon: "mdi-account", path:"/collection" },
-        { title: "Wants", icon: "mdi-account-group-outline", path:"/wants"},
+        { title: "Home", icon: "mdi-home-city", path: "/home" },
+        { title: "Minhas Cartas", icon: "mdi-account", path: "/collection" },
+        { title: "Lista de Desejo", icon: "mdi-account-group-outline", path: "/wants" },
       ],
     };
   },
   methods: {
     menuClick(view) {
-      this.$router.push(view.path)
+      this.$router.push(view.path);
     },
   },
 };
