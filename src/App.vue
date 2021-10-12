@@ -3,7 +3,7 @@
     <v-layout>
       <side-menu v-if="showSideMenu()"> </side-menu>
       <v-main>
-        <v-container>
+        <v-container class="mainContainer">
           <v-row>
             <v-col>
               <router-view ref="router"> </router-view>
@@ -37,4 +37,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.mainContainer{
+    background-color: rgb(233, 232, 229);
+}
 </style>
