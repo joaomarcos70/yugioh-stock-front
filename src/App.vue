@@ -1,42 +1,44 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar app>
-      <v-img
-        class="mx-5"
-        style="cursor: pointer"
-        @click="routerPush('home')"
-        src="../src/assets/logo/logo.png"
-        max-height="140"
-        max-width="140"
-        contain
-      ></v-img>
-
-      <v-toolbar-title>Yugioh Stock</v-toolbar-title>
-    </v-app-bar>
-
-    <v-main>
-      <router-view ref="router"> </router-view>
-    </v-main>
-
-    <v-footer dark padless>
-      <v-card class="flex" flat tile>
-        <v-card-text class="py-2 white--text text-center">
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-        </v-card-text>
-      </v-card>
-    </v-footer>
+    <v-layout>
+      <side-menu v-if="showSideMenu()"> </side-menu>
+      <v-main>
+        <v-container class="mainContainer">
+          <v-row>
+            <v-col>
+              <router-view ref="router"> </router-view>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-main>
+    </v-layout>
   </v-app>
 </template>
 
 <script>
+import SideMenu from "./components/SideMenu/SideMenu.vue";
+
 export default {
+  components: {
+    SideMenu,
+  },
+
+  beforeMount() {
+    this.showSideMenu();
+  },
+
   methods: {
-    routerPush(rota) {
-      this.$router.push({ path: rota });
+    showSideMenu() {
+      let page = this.$route.path;
+      return page != "/";
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+
+.mainContainer{
+    background-color: rgb(233, 232, 229);
+}
 </style>

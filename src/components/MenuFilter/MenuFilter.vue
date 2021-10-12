@@ -1,22 +1,21 @@
 <template>
-  <v-navigation-drawer v-model="drawer" class="filtro" absolute right permanent>
+  <v-navigation-drawer v-model="drawer" class="filtro" right permanent app>
     <v-form>
       <v-container>
-        <v-row>
+        <v-row dense>
+          <v-col cols="12">
+            <h1>Busque seu card</h1>
+          </v-col>
+        </v-row>
+
+        <v-row dense>
           <v-col cols="12">
             <v-text-field label="Nome" outlined></v-text-field>
           </v-col>
         </v-row>
 
-        <v-row>
-          <v-col cols="12">
-            <v-text-field label="Descrição" outlined></v-text-field>
-          </v-col>
-        </v-row>
-
-        <v-row>
+        <v-row dense>
           <v-col cols="12" md="6">
-            <span>Escolha o tipo do deck </span>
             <v-radio-group v-model="radioGroup" row>
               <v-radio label="Main deck" value="main"></v-radio>
               <v-radio label="Extra deck" value="extra"></v-radio>
@@ -28,12 +27,6 @@
               :items="variacaoCarta"
               outlined
             ></v-combobox>
-          </v-col>
-        </v-row>
-
-        <v-row>
-          <v-col cols="12" md="4">
-            <v-text-field label="First name" outlined></v-text-field>
           </v-col>
         </v-row>
       </v-container>
@@ -88,4 +81,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.filtro {
+  width: 110vw;
+}
+</style>
