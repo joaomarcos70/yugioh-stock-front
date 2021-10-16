@@ -40,5 +40,7 @@ export default {
 
 .mainContainer{
     background-color: rgb(233, 232, 229);
+    height: 100vh;
+    width: 100vw;
 }
 </style>
