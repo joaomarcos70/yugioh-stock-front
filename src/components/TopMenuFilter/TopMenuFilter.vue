@@ -1,8 +1,8 @@
 <template>
   <v-card class="overflow-hidden">
-    <v-app-bar app color="white" prominent>
+    <v-app-bar app height="200" color="white" prominent>
       <v-col cols="12">
-        <v-row>
+        <v-row dense>
           <v-col cols="4">
             <v-text-field label="Nome" filled></v-text-field>
           </v-col>
@@ -21,6 +21,24 @@
           </v-col>
           <v-col cols="2">
             <v-btn elevation="5" plain>Exportar</v-btn>
+          </v-col>
+        </v-row>
+        <v-row dense>
+          <v-col cols="4">
+            <v-text-field label="Descrição da carta" filled></v-text-field>
+          </v-col>
+          <v-col cols="4">
+            <v-select
+              :items="variacaoCarta"
+              filled
+              label="Tipo de Carta"
+            ></v-select>
+          </v-col>
+          <v-col cols="2">
+
+          </v-col>
+          <v-col cols="2">
+            <v-btn elevation="5" plain>Buscar</v-btn>
           </v-col>
         </v-row>
       </v-col>
