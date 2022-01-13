@@ -4,12 +4,7 @@
       <v-row style="height: 350px">
         <v-col></v-col>
         <v-col cols="5">
-          <v-card
-            class="text-center pa-2"
-            outlined
-            tile
-            color="#FAFAFA"
-          >
+          <v-card class="text-center pa-2" outlined tile color="#FAFAFA">
             Yugi
           </v-card>
         </v-col>
@@ -32,11 +27,11 @@
 
                 <validation-provider
                   v-slot="{ errors }"
-                  name="Senha"
+                  name="password"
                   rules="required"
                 >
                   <v-text-field
-                    v-model="senha"
+                    v-model="password"
                     :error-messages="errors"
                     label="Senha"
                     type="password"
@@ -53,7 +48,7 @@
           </v-card>
         </v-col>
       </v-row>
-          <v-footer dark padless>
+      <v-footer dark padless>
         <v-card class="flex" flat tile>
           <v-card-text class="py-2 white--text text-center">
             {{ new Date().getFullYear() }} — <strong>Yugioh Stock</strong>
@@ -64,9 +59,8 @@
   </div>
 </template>
 
-
-
 <script>
+import axios from "axios";
 import { required, email } from "vee-validate/dist/rules";
 import {
   extend,
@@ -74,6 +68,8 @@ import {
   ValidationProvider,
   setInteractionMode,
 } from "vee-validate";
+
+const baseUrl = "http://localhost:3000";
 
 setInteractionMode("eager");
 
@@ -94,13 +90,19 @@ export default {
   },
   data: () => ({
     email: "",
-    senha: "",
+    password: "",
   }),
 
   methods: {
     submit() {
       if (this.$refs.observer.validate()) {
-        this.$router.push({ path: "home" });
+        axios
+          .post(baseUrl + "/auth/login", this.$data)
+          .then((res) => {
+            if (res.status == 200) this.$router.push({ path: "home" });
+          })
+          .catch((error) => {
+          });
       }
     },
   },
